@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tug'ilgan kun</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 100%;
+            height: 730px;
+            align-content: center;
+            justify-items: center;
+        }
+        h1{
+            color: black;
+        }
+        #time{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>
+            Tug'ulgan kunga <span id="time"></span> qoldi!
+        </h1>
+    </div>
+    <script>
+        setInterval(() => {
+        const h = '23'
+        const m = '60'
+        const ms = '60'
+        document.getElementById('time').innerHTML = `${h - new Date().getHours()}:${ m - new Date().getMinutes()}:${ms - new Date().getSeconds()}`
+        if(h - new Date().getHours() === 0 &&  m - new Date().getMinutes() === 0 && ms - new Date().getSeconds() === 0){
+            document.getElementById('time').innerHTML = `Tug'ulgan kuning bilan TABRIKLAYMIZ!!!`
+        }
+    }, 1000);
+    </script>
+</body>
+</html>
